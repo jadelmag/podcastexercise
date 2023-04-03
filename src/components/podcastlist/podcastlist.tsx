@@ -22,10 +22,10 @@ const PodcastList = ({
 		</Segment>
 		{loading ? (
 			<Placeholder fluid>
-				<Placeholder.Line length="full" />
-				<Placeholder.Line length="full" />
-				<Placeholder.Line length="full" />
-				<Placeholder.Line length="full" />
+				<Placeholder.Line length="full" id="placeholder" />
+				<Placeholder.Line length="full" id="placeholder" />
+				<Placeholder.Line length="full" id="placeholder" />
+				<Placeholder.Line length="full" id="placeholder" />
 			</Placeholder>
 		) : (
 			<TableEpisodes episodes={episodes} podcast={podcast} description={description} />

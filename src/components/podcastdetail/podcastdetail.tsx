@@ -18,15 +18,17 @@ interface PodcastDetailProps {
 	description: string
 }
 
-const PodcastDetail = ({ podcast, description }: PodcastDetailProps) => (
-	<Link to={`/podcast/${podcast.id}`}>
-		<Card
-			image={podcast.artwork}
-			header={podcast.name}
-			meta={'by ' + podcast.artistName}
-			extra={<Description description={description} />}
-		/>
-	</Link>
-)
+const PodcastDetail = ({ podcast, description }: PodcastDetailProps) => {
+	return (
+		<Link to={`/podcast/${podcast.id}`}>
+			<Card
+				image={podcast.artwork}
+				header={podcast.name}
+				meta={`by ${podcast.artistName}`}
+				extra={<Description description={description} />}
+			/>
+		</Link>
+	)
+}
 
 export default PodcastDetail

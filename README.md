@@ -60,3 +60,66 @@ Para visualizar la SPA en modo _production_ debemos acceder a la URL: http://loc
 [serve]: https://www.npmjs.com/package/serve
 [npm]: https://www.npmjs.com/
 [yarn]: https://yarnpkg.com/lang/en/
+
+## Ejecutar pruebas E2E con cypress
+
+Cypress es una herramienta Javascript de end-to-end testing. En otras palabras, permite comprobar que la performance de un producto de software recién desarrollado sea buena y corresponda con los requerimientos iniciales, utilizando la automatización.
+
+1. Ejecutar `yarn run cypress:open`.
+2. Pulsar en E2E testing.
+3. Seleccionamos el navegar, por ejemplo `chrome`, y pulsamos en el botón `Start Testing in Chrome`
+4. En la pesstaña Specs aparecen las pruebas a testear.
+
+## Pruebas Unitarias - React Testing Library
+
+1. Para realizar pruebas unitarias hay que instalar las siguientes dependencias:
+
+```sh
+yarn add --dev @testing-library/react @testing-library/jest-dom
+```
+
+```sh
+yarn add vitest
+```
+
+2. Modificar el vite.config.ts y añadir lo siguiente:
+
+```json
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+```
+
+3. Añadir en vite.config.ts la configuración para los test:
+
+```json
+    test: {
+        environment: 'jsdom',
+        globals: true,
+    }
+```
+
+Dejando el fichero en el siguiente estado:
+
+```json
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+	plugins: [react()],
+	test: {
+		environment: 'jsdom',
+		globals: true,
+	},
+})
+
+```
+
+4. Excluir los ficheros test en el fichero tsconfig.json cuando compile el proyecto:
+
+```json
+"exclude": ["**/*.spec.tsx", "**/*.test.tsx"],
+```
