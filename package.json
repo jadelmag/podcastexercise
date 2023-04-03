@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "yarn prettier --write ."
+    "lint": "yarn prettier --write .",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "html-react-parser": "^3.0.15",
@@ -19,15 +20,20 @@
     "semantic-ui-react": "^2.1.4"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
+    "cypress": "^12.9.0",
     "prettier": "2.8.7",
     "standard": "^17.0.0",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
   },
   "eslintConfig": {
+    "env": {
+      "cypress/globals": true
+    },
     "extends": "./node_modules/standard/eslintrc.json"
   }
 }

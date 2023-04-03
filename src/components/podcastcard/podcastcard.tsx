@@ -10,7 +10,7 @@ interface PodcastCardProps {
 const PodcastCard = ({ podcast }: PodcastCardProps): JSX.Element => {
 	return (
 		<Link to={`/podcast/${podcast.id}`} state={{ podcast: podcast }}>
-			<Card className="podcastcard">
+			<Card id={podcast.id} className="podcastcard">
 				<Image src={podcast.img} />
 				<Card.Content>
 					<Card.Header>{podcast.name}</Card.Header>
