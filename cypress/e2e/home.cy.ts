@@ -8,21 +8,23 @@ describe('Home Page', () => {
 	})
 
 	it('check values from request', () => {
-		cy.getPodcasts()
-		cy.wait(20000)
-		cy.contains(100)
+		cy.podcastRequest().then((podcasts) => {
+			expect(podcasts.body).to.have.property('contents')
+			cy.contains('Million Dollaz Worth Of Game')
+			cy.contains(100)
+		})
 	})
 
 	it('filter podcasts', () => {
-		cy.getPodcasts()
-		cy.wait(20000)
-		cy.get('input').first().type('million')
-		cy.contains(1)
+		cy.podcastRequest().then((podcasts) => {
+			cy.get('input').first().type('million')
+			cy.contains(1)
+		})
 	})
 
 	it('redirect to podcast detail page', () => {
-		cy.getPodcasts()
-		cy.wait(20000)
-		cy.contains('Million Dollaz Worth Of Game').click()
+		cy.podcastRequest().then((podcasts) => {
+			cy.contains('Million Dollaz Worth Of Game').click()
+		})
 	})
 })
