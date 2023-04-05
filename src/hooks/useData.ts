@@ -4,9 +4,11 @@ import { Episode } from '../interfaces/xml.interface';
 import { SinglePodcast } from '../interfaces/podcast.interface';
 
 const useData = () => {
-  const [podcasts, setPodcasts] = useState<Podcast[]>();
-  const [episodes, setEpisodes] = useState<Episode[]>();
-  const [podcastDetail, setPodcastDetail] = useState<SinglePodcast>();
+  const [podcasts, setPodcasts] = useState<Podcast[]>([]);
+  const [episodes, setEpisodes] = useState<Episode[]>([]);
+  const [podcastDetail, setPodcastDetail] = useState<SinglePodcast | null>(
+    null
+  );
 
   const savePodcasts = (podcasts: Podcast[]) => setPodcasts(podcasts);
   const savePodcastDetail = (podcastDetail: SinglePodcast) =>
