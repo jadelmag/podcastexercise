@@ -1,1 +1,1 @@
-export const CORS_PROXY = 'https://api.allorigins.win/get?url='
+export const CORS_PROXY = 'https://api.allorigins.win/get?url=';

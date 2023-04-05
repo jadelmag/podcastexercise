@@ -1,142 +1,142 @@
-export interface AllPodcastsResponse {
-	contents: string
+export interface ApiResponse {
+  contents: string;
 }
 
 export interface AllPodcasts {
-	feed: Feed
+  feed: Feed;
 }
 
 export interface Feed {
-	author: Author
-	entry: Entry[]
-	updated: Icon
-	rights: Icon
-	title: Icon
-	icon: Icon
-	link: Link[]
-	id: Icon
+  author: Author;
+  entry: Entry[];
+  updated: Icon;
+  rights: Icon;
+  title: Icon;
+  icon: Icon;
+  link: Link[];
+  id: Icon;
 }
 
 export interface Author {
-	name: Icon
-	uri: Icon
+  name: Icon;
+  uri: Icon;
 }
 
 export interface Icon {
-	label: string
+  label: string;
 }
 
 export interface Entry {
-	'im:name': Icon
-	'im:image': IMImage[]
-	summary: Icon
-	'im:price': IMPrice
-	'im:contentType': IMContentType
-	rights?: Icon
-	title: Icon
-	link: Link
-	id: ID
-	'im:artist': IMArtist
-	category: Category
-	'im:releaseDate': IMReleaseDate
+  'im:name': Icon;
+  'im:image': IMImage[];
+  summary: Icon;
+  'im:price': IMPrice;
+  'im:contentType': IMContentType;
+  rights?: Icon;
+  title: Icon;
+  link: Link;
+  id: ID;
+  'im:artist': IMArtist;
+  category: Category;
+  'im:releaseDate': IMReleaseDate;
 }
 
 export interface Category {
-	attributes: CategoryAttributes
+  attributes: CategoryAttributes;
 }
 
 export interface CategoryAttributes {
-	'im:id': string
-	term: PurpleLabel
-	scheme: string
-	label: PurpleLabel
+  'im:id': string;
+  term: PurpleLabel;
+  scheme: string;
+  label: PurpleLabel;
 }
 
 export enum PurpleLabel {
-	Music = 'Music',
-	MusicCommentary = 'Music Commentary',
-	MusicHistory = 'Music History',
-	MusicInterviews = 'Music Interviews',
+  Music = 'Music',
+  MusicCommentary = 'Music Commentary',
+  MusicHistory = 'Music History',
+  MusicInterviews = 'Music Interviews',
 }
 
 export interface ID {
-	label: string
-	attributes: IDAttributes
+  label: string;
+  attributes: IDAttributes;
 }
 
 export interface IDAttributes {
-	'im:id': string
+  'im:id': string;
 }
 
 export interface IMArtist {
-	label: string
-	attributes?: IMArtistAttributes
+  label: string;
+  attributes?: IMArtistAttributes;
 }
 
 export interface IMArtistAttributes {
-	href: string
+  href: string;
 }
 
 export interface IMContentType {
-	attributes: IMContentTypeAttributes
+  attributes: IMContentTypeAttributes;
 }
 
 export interface IMContentTypeAttributes {
-	term: FluffyLabel
-	label: FluffyLabel
+  term: FluffyLabel;
+  label: FluffyLabel;
 }
 
 export enum FluffyLabel {
-	Podcast = 'Podcast',
+  Podcast = 'Podcast',
 }
 
 export interface IMImage {
-	label: string
-	attributes: IMImageAttributes
+  label: string;
+  attributes: IMImageAttributes;
 }
 
 export interface IMImageAttributes {
-	height: string
+  height: string;
 }
 
 export interface IMPrice {
-	label: IMPriceLabel
-	attributes: IMPriceAttributes
+  label: IMPriceLabel;
+  attributes: IMPriceAttributes;
 }
 
 export interface IMPriceAttributes {
-	amount: string
-	currency: Currency
+  amount: string;
+  currency: Currency;
 }
 
 export enum Currency {
-	Usd = 'USD',
+  Usd = 'USD',
 }
 
 export enum IMPriceLabel {
-	Get = 'Get',
+  Get = 'Get',
 }
 
 export interface IMReleaseDate {
-	label: Date
-	attributes: Icon
+  label: Date;
+  attributes: Icon;
 }
 
 export interface Link {
-	attributes: LinkAttributes
+  attributes: LinkAttributes;
 }
 
 export interface LinkAttributes {
-	rel: Rel
-	type?: Type
-	href: string
+  rel: Rel;
+  type?: Type;
+  href: string;
 }
 
 export enum Rel {
-	Alternate = 'alternate',
-	Self = 'self',
+  Alternate = 'alternate',
+  Self = 'self',
 }
 
 export enum Type {
-	TextHTML = 'text/html',
+  TextHTML = 'text/html',
 }

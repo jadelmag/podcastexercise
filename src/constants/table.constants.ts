@@ -1,1 +1,1 @@
-export const TAM_PAGE = 10
+export const TAM_PAGE = 10;
